@@ -1,0 +1,30 @@
+# Python and local environments
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+.mypy_cache/
+.ruff_cache/
+
+# Local configuration and logs
+.env
+.env.*
+.streamlit/secrets.toml
+*.log
+.DS_Store
+Thumbs.db
+
+# Downloaded source data and reproducible outputs
+raw_data/*
+!raw_data/README.md
+data_cleaned/*
+!data_cleaned/.gitkeep
+reports/eda_summary.md
+reports/*.csv
+reports/figures/*
+!reports/figures/.gitkeep
+reports/tables/*
+!reports/tables/.gitkeep
+models/outputs/*
+!models/outputs/.gitkeep
