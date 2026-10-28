@@ -24,6 +24,7 @@ Từ thư mục gốc project:
 python -m venv .venv
 .\.venv\Scripts\python -m pip install -r requirements-dev.txt
 .\.venv\Scripts\python scripts/run_pipeline.py
+.\.venv\Scripts\python scripts/run_temporal_pipeline.py
 .\.venv\Scripts\python -m pytest -q
 .\.venv\Scripts\python -m streamlit run app.py
 ```
@@ -33,6 +34,8 @@ Streamlit 1.57.0 cần Starlette tương thích; `requirements.txt` ghim cặp p
 File dữ liệu gốc và output sinh ra không theo Git. Xem [hướng dẫn lấy dữ liệu](raw_data/README.md) để đặt `Online Retail.xlsx` đúng chỗ trước khi chạy pipeline. CI chỉ chạy test với dữ liệu giả lập nhỏ, không cần tải dữ liệu gốc.
 
 Pipeline mặc định đọc `raw_data/Online Retail.xlsx`, giữ giao dịch trước snapshot `2011-12-10`. Có thể dùng `--source`, `--snapshot-date`, `--output-dir`, `--report-dir` để tạo một snapshot khác. **Dùng output dir khác** nếu chạy thử CSV hai năm để không ghi đè baseline.
+
+Để kiểm định mua lại 90 ngày, dùng `scripts/run_temporal_pipeline.py` sau baseline. Teammate đọc `data_cleaned/temporal/development/rfm_model_features.csv` để chọn model, rồi tạo nhãn cho snapshot `final` với tham số đã chốt. Kết quả tương lai nằm riêng trong `data_cleaned/temporal/outcomes/`. Xem [hợp đồng bàn giao](docs/temporal_handoff.md); file `data_cleaned/rfm_model_features.csv` baseline cuối năm **không phù hợp** làm đầu vào cho kiểm định 90 ngày tại 01/09 vì chứa giao dịch tương lai.
 
 ## Hợp đồng dữ liệu cho bốn model
 

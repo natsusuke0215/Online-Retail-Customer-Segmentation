@@ -1,6 +1,6 @@
 # Đề xuất nâng cấp đề tài cho môn học và portfolio Data Scientist
 
-> Đây là **đề xuất phạm vi**, chưa thay thế baseline và phân công hiện tại của nhóm.
+> Phần dữ liệu của đề xuất đã được triển khai thành hai snapshot và baseline development. Xem [bàn giao hiện hành](temporal_handoff.md). Bốn model và đánh giá cuối vẫn chờ nhãn cụm của nhóm.
 
 ## Nhận định
 
