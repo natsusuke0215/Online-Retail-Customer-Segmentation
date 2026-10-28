@@ -28,7 +28,6 @@ reports/figures/*
 reports/tables/*
 !reports/tables/.gitkeep
 models/outputs/*
-!models/outputs/.gitkeep
 !models/outputs/development/
 !models/outputs/final/
 models/outputs/development/*
