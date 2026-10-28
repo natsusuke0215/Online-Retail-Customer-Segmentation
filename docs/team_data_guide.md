@@ -2,6 +2,8 @@
 
 **Đơn vị phân tích:** một dòng = một khách hàng (`CustomerID`). Nguồn là `raw_data/Online Retail.xlsx`; chạy `scripts/run_pipeline.py` rồi `scripts/run_temporal_pipeline.py` để tạo các file bên dưới. Không cần melt bảng RFM.
 
+[Báo cáo EDA có biểu đồ](eda/README.md) giải thích các quyết định làm sạch, phân phối RFM và liên hệ với mua lại 90 ngày trên development.
+
 | Giai đoạn | Feature để model đọc | Số khách | Cửa sổ kết quả 90 ngày |
 | --- | --- | ---: | --- |
 | Development | `data_cleaned/temporal/development/rfm_model_features.csv` | 2.716 | `[2011-06-01, 2011-08-30)` |

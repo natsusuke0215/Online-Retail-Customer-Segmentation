@@ -1,6 +1,7 @@
 # Tài liệu project
 
 - [Hướng dẫn dữ liệu cho teammate](team_data_guide.md): file cần đọc, cột feature và định dạng nhãn cụm.
+- [EDA và insight có biểu đồ](eda/README.md): chất lượng nguồn, phân phối RFM và quan hệ mua lại trên development.
 - [Bàn giao snapshot 90 ngày](temporal_handoff.md): kế hoạch đánh giá và việc còn chờ nhãn cụm.
 - [Đánh giá phương pháp](methodology_review.md): nguồn tham khảo, lựa chọn làm sạch và giới hạn.
 

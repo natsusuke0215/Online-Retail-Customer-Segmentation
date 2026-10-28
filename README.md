@@ -11,11 +11,23 @@ python -m venv .venv
 .\.venv\Scripts\python -m pip install -r requirements-dev.txt
 .\.venv\Scripts\python scripts/run_pipeline.py
 .\.venv\Scripts\python scripts/run_temporal_pipeline.py
+.\.venv\Scripts\python scripts/build_eda_report.py
 .\.venv\Scripts\python scripts/evaluate_temporal.py --phase development
 .\.venv\Scripts\python -m pytest -q
 ```
 
-`run_pipeline.py` tạo bảng giao dịch đã kiểm toán và EDA; `run_temporal_pipeline.py` tạo hai snapshot cho model. Dữ liệu gốc, dữ liệu đã xử lý và báo cáo sinh ra được `.gitignore` loại khỏi Git; teammate chạy hai script để tái tạo chúng trên máy mình.
+`run_pipeline.py` tạo bảng giao dịch đã kiểm toán; `run_temporal_pipeline.py` tạo hai snapshot cho model; `build_eda_report.py` tái tạo [báo cáo EDA và 6 biểu đồ](docs/eda/README.md). Dữ liệu gốc và các output lớn trong `data_cleaned/`, `reports/` không theo Git; **bản EDA chọn lọc trong `docs/eda/` có trên GitHub**.
+
+## Trạng thái sáu bước
+
+| Bước | Trạng thái |
+| --- | --- |
+| Thu thập và làm sạch | Xong, có audit và báo cáo chất lượng |
+| EDA | Xong cho nguồn và tập development; [xem insight và plot](docs/eda/README.md) |
+| Feature engineering | Xong: RFM, `log1p`, scaler fit riêng theo snapshot |
+| Chọn feature và chia dữ liệu | Baseline ba feature đã chốt; development/final chia theo thời gian. Kiểm tra độ nhạy feature/scaler còn chờ model |
+| Xây bốn model | Teammate đang triển khai |
+| Đánh giá cuối và demo | Evaluator đã có; kết luận và demo chờ nhãn cụm |
 
 ## Cấu trúc
 
@@ -29,7 +41,7 @@ src/retail_segmentation/        Cleaning, EDA, feature, evaluation
 scripts/                       Lệnh chạy pipeline và đánh giá
 models/outputs/{development,final}/   Nhãn cụm do teammate tạo
 reports/                        EDA và bảng so sánh (không theo Git)
-docs/                           Hướng dẫn dữ liệu và phương pháp
+docs/                           EDA có hình, hướng dẫn dữ liệu và phương pháp
 tests/                          Kiểm tra logic quan trọng
 ```
 
