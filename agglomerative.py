@@ -35,12 +35,32 @@ from sklearn.metrics import (
     silhouette_score,
 )
 
-# Add project root and src to path
-ROOT = Path(__file__).resolve().parent
-sys.path.insert(0, str(ROOT / "src"))
+# Robust repository root and module resolution
+def resolve_repo_root() -> Path:
+    """Resolve repository root containing 'src/retail_segmentation'."""
+    here = Path(__file__).resolve().parent if "__file__" in locals() else Path.cwd()
+    for candidate in [here, here.parent, here / "Online-Retail-Customer-Segmentation"]:
+        if (candidate / "data_cleaned").exists() and (candidate / "src" / "retail_segmentation").exists():
+            return candidate.resolve()
+    # Fallback to current working directory
+    return here.resolve()
 
-from retail_segmentation.pipeline import FEATURE_COLUMNS, RFM_COLUMNS
-from retail_segmentation.temporal_evaluation import load_phase
+
+ROOT = resolve_repo_root()
+SRC_PATH = ROOT / "src"
+if str(SRC_PATH) not in sys.path:
+    sys.path.insert(0, str(SRC_PATH))
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+try:
+    from retail_segmentation.pipeline import FEATURE_COLUMNS, RFM_COLUMNS
+    from retail_segmentation.temporal_evaluation import load_phase
+except ImportError:
+    # Additional fallback for IDEs and unusual execution contexts
+    sys.path.insert(0, str(Path("D:/WORKSPACE/Online-Retail-Customer-Segmentation/src").resolve()))
+    from retail_segmentation.pipeline import FEATURE_COLUMNS, RFM_COLUMNS
+    from retail_segmentation.temporal_evaluation import load_phase
 
 
 def setup_plotting_style() -> None:
