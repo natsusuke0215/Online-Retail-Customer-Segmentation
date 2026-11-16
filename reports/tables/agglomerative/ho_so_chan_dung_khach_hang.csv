@@ -1,0 +1,5 @@
+﻿Mã cụm,Chân dung khách hàng,Số lượng khách,Tỷ lệ khách (%),Recency trung vị (ngày),Frequency trung vị (đơn),Monetary trung vị (£),Tổng doanh thu (£),Tỷ trọng doanh thu (%)
+0,"Khách hàng trung thành (Gắn kết đều, Giá trị khá)",980,36.08%,27.0,3.0,924.57 £,"1,261,410.06 £",38.61%
+1,"Khách hàng có nguy cơ rời bỏ / Ngủ đông (Lâu không mua, Tần suất thấp)",1202,44.26%,97.0,1.0,261.15 £,"405,782.08 £",12.42%
+2,"Khách hàng VIP / Quán quân (Chi tiêu khủng, Mua thường xuyên)",215,7.92%,9.0,9.0,"3,450.58 £","1,488,393.45 £",45.56%
+3,"Khách hàng tiềm năng (Mới mua gần đây, Đầy triển vọng)",319,11.75%,20.0,1.0,304.30 £,"111,402.69 £",3.41%
