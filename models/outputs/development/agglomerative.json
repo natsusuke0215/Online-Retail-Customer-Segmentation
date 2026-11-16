@@ -1,0 +1,16 @@
+{
+  "model": "agglomerative",
+  "phase": "development",
+  "customers": 2716,
+  "runtime_seconds": 0.2294,
+  "parameters": {
+    "n_clusters": 4,
+    "linkage": "ward",
+    "metric": "euclidean"
+  },
+  "metrics": {
+    "silhouette": 0.3089,
+    "davies_bouldin": 1.044,
+    "calinski_harabasz": 1656.75
+  }
+}

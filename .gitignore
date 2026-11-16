@@ -25,8 +25,12 @@ reports/*.csv
 reports/temporal/
 reports/figures/*
 !reports/figures/.gitkeep
+!reports/figures/agglomerative/
+!reports/figures/agglomerative/*
 reports/tables/*
 !reports/tables/.gitkeep
+!reports/tables/agglomerative/
+!reports/tables/agglomerative/*
 models/outputs/*
 !models/outputs/development/
 !models/outputs/final/
@@ -34,3 +38,7 @@ models/outputs/development/*
 models/outputs/final/*
 !models/outputs/development/.gitkeep
 !models/outputs/final/.gitkeep
+!models/outputs/development/agglomerative.csv
+!models/outputs/development/agglomerative.json
+!models/outputs/final/agglomerative.csv
+!models/outputs/final/agglomerative.json
