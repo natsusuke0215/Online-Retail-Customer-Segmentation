@@ -2,7 +2,7 @@
   "model": "agglomerative",
   "phase": "final",
   "customers": 3314,
-  "runtime_seconds": 0.1635,
+  "runtime_seconds": 0.156,
   "parameters": {
     "n_clusters": 4,
     "linkage": "ward",
